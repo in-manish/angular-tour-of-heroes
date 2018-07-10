@@ -1,8 +1,7 @@
 <div class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+     
     {{ hero.id }}:{{ hero.name }}
   </li>
-  <label *ngIf="selectedHero">Selected Hero!
-    <h1>{{ selectedHero.name }}</h1>
-  </label>
 </div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
